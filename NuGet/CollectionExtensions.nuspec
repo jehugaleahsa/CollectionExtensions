@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+	<title>$title$</title>
+    <authors>$author$</authors>
+    <owners>jehugaleahsa</owners>
+	<projectUrl>http://github.com/jehugaleahsa/collectionextensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial commit</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>ReadOnlyList ReversedList Sublist TypedList ReadOnlySet Substring DefaultDictionary OrderedDictionary PropertyDictionary ReadOnlyDictionary PriorityQueue LINQ extension extensions STL</tags>
+  </metadata>
+</package>
