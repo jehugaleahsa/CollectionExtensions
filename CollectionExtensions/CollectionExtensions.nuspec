@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+	<title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+	<projectUrl>http://github.com/jehugaleahsa/collectionextensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial commit</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>
+	algorithm array dictionary ilist list linq reversed stl sublist convert substitution default readonly null reverse substring type typed typing combine transform set difference intersection merge sort partition random replace rotate union unique disjoint binary search contains duplicates sequence copy sample count fill foreach heap nth-element lowerbound observablecollection collection upperbound permutation overwrite shuffle shell stable swap priority queue index sort
+	</tags>
+  </metadata>
+</package>

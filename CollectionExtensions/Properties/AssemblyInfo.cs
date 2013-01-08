@@ -7,7 +7,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CollectionExtensions")]
-[assembly: AssemblyDescription("Collections and Wrappers for .NET")]
+[assembly: AssemblyDescription("Wrappers and extensions to the .NET collections and LINQ.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Truncon")]
 [assembly: AssemblyProduct("CollectionExtensions")]
@@ -33,7 +33,7 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]
 [assembly: InternalsVisibleTo("CollectionExtensions.Tests")]
