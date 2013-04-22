@@ -4,6 +4,11 @@ Useful wrappers to the built-in .NET collection types.
 
 Download using NuGet: [CollectionExtensions](http://nuget.org/packages/collectionextensions)
 
+## Deprecated
+I decided that there are just too many cross-cutting concerns. I have created a new project called [NDex](http://github.com/jehugaleahsa/ndex) that contains the `IList`-related classes.
+
+I will eventually remove this project.
+
 ## Overview
 The CollectionExtensions library provides collections for working in .NET. These include:
 * A DefaultDictionary for handling missing keys.
