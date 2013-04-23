@@ -7,7 +7,7 @@ Download using NuGet: [CollectionExtensions](http://nuget.org/packages/collectio
 ## Deprecated
 I decided that there are just too many cross-cutting concerns. I have created a new project called [NDex](http://github.com/jehugaleahsa/ndex) that contains the `IList`-related classes.
 
-I will eventually remove this project.
+I may eventually move the other code to their own projects. But, to be honest, I see very little demand for some of them. I will create projects as demand calls for them. Once I feel the important functionality of this project has been ported, I will eventually remove it.
 
 ## Overview
 The CollectionExtensions library provides collections for working in .NET. These include:
