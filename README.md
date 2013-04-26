@@ -62,3 +62,8 @@ The other approach would involve grabbing the `Type` of the object, requesting i
 Since `PropertyDictionary` is just a `Dictionary`, you can also check to see if properties are provided (`ContainsKey`) and use default values if they are missing. `PropertyDictionary` works with the `DefaultDictionary` class.
 
 ## ReadOnlyDictionary and ReadOnlySet
+In the `System.Collections.ObjectModel` namespace, there is a `ReadOnlyCollection<T>` class for creating a read-only wrapper for `T[]`, `List<T>`, `Collection<T>`, etc. However, there are no complimentary classes for `ISet<T>` or `IDictionary<TKey, TValue>`.
+
+With .NET 4.5, there are new interfaces for [read-only collections](http://visualstudiomagazine.com/articles/2012/08/07/new-read-only-collection-interfaces-for-net.aspx). These will technically perform better if they are available.
+
+The `ReadOnlySet` and `ReadOnlyDictionary` classes are available if you don't have access to the new interfaces.
