@@ -625,7 +625,7 @@ namespace CollectionExtensions.Extensions
             where TList : IList<T>
         {
             int count = list.Count;
-            shift = Sublist.GetReducedOffset<TList, T>(list, 0, count, shift);
+            shift = getReducedOffset<TList, T>(list, 0, count, shift);
             for (int index = shift; index < count; ++index)
             {
                 yield return list[index];
@@ -634,6 +634,17 @@ namespace CollectionExtensions.Extensions
             {
                 yield return list[index];
             }
+        }
+
+        private static int getReducedOffset<TList, T>(TList list, int first, int past, int shift)
+        {
+            int count = past - first;
+            shift %= count;
+            if (shift < 0)
+            {
+                shift += count;
+            }
+            return shift;
         }
 
         #endregion

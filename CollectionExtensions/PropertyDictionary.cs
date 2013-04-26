@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reflection;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace CollectionExtensions
 {
@@ -127,7 +127,7 @@ namespace CollectionExtensions
                     object value = getValue(propertyInfo);
                     values.Add(value);
                 }
-                return values.ReadOnly();
+                return values.AsReadOnly();
             }
         }
 

@@ -1,9 +1,8 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CollectionExtensions;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CollectionExtensions.Test
 {

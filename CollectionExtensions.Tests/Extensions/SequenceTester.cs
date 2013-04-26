@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CollectionExtensions.Extensions;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using CollectionExtensions.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CollectionExtensions.Tests.Extensions
 {
@@ -1006,9 +1006,9 @@ namespace CollectionExtensions.Tests.Extensions
         [TestMethod]
         public void TestRotateLeft_SourceIsIList_Rotates()
         {
-            IEnumerable<int> source = new List<int>() { 1, 2, 3 }.ToSublist();
+            IEnumerable<int> source = new List<int>() { 1, 2, 3 };
             int shift = 1;
-            IEnumerable<int> actual = Sequence.RotateLeft(source, shift);
+            IEnumerable<int> actual = source.RotateLeft(shift);
             IEnumerable<int> expected = new int[] { 2, 3, 1 };
             Assert.IsTrue(actual.SequenceEqual(expected), "The items were not in the expected order.");
         }
