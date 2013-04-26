@@ -67,3 +67,28 @@ In the `System.Collections.ObjectModel` namespace, there is a `ReadOnlyCollectio
 With .NET 4.5, there are new interfaces for [read-only collections](http://visualstudiomagazine.com/articles/2012/08/07/new-read-only-collection-interfaces-for-net.aspx). These will technically perform better if they are available.
 
 The `ReadOnlySet` and `ReadOnlyDictionary` classes are available if you don't have access to the new interfaces.
+
+##DictionaryExtensions
+There's no built-in way to compare dictionaries in .NET. The `DictionaryEquals` method will determine if two dictionaries have the same keys and values. While this sounds simple, it is fraught with danger...
+
+Consider what should happen if you compared two dictionaries if one dictionary uses a case-sensitive key comparison and the other uses a case-insensitive key comparison. Should the key "dog" equal "DOG"? Which dictionary's key comparer should be used? `DictionaryEquals` will use the first dictionary's key comparer.
+
+Now consider what happens if the values are user-defined types. How should values be compared? By default, `DictionaryEquals` will use the default `EqualityComparer<TValue>`. However, you can provide your own `IEqualityComparer<TValue>` to override the default behavior.
+
+## LINQ Extensions
+There are a handful of extensions to LINQ that are useful when manipulating collections *in-memory*. LINQ was designed with SQL generation in mind. Because of that, some otherwise obvious overloads were not provided because there's no translation to SQL. Nonetheless, they are useful operations. As long as you know you're working in-memory...
+
+### CompareTo
+If you want to do a lexicographical comparison of two enumerables, use `CompareTo`. It will return `-1` if the first collection has a smaller item or is shorter. It will return `1` if the second collection has a smaller item or is shorter. Otherwise, it will return `0` if the collections have the same items and are the same length.
+
+`CompareTo` accepts an `IComparer<T>` if you need to customize how the values are compared.
+
+### Except
+LINQ's `Except` only works if both collections contain the same types. It will only match whole objects. At times, you want to remove items with a property whose value is found in another collection.
+
+For example, say you have a list of `Product`s. The user can select which `Product`s they want to remove from the `Order`. However, the UI only returns the primary keys of the `Product`s. In this case, LINQ's `Except` won't work because you can only call `Except` with to lists of `Product`. You will need to first convert the primary keys into `Product`s and then call `Except`. Doing an entire database hit is wasteful if you are just managing a collection in-memory.
+
+CollectionExtensions provides a version of `Except` for handling this use-case. It accepts a key-selector and a list of keys. It will efficiently remove any items from the source collection that have properties whose values are found in the key collection.
+
+### ForEach
+LINQ does not provide a way to perform an action for each item in a collection. The `ForEach` method will iterate over each item in a collection and peform an `Action` on it. Be careful.
