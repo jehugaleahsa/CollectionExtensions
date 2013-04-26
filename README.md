@@ -84,11 +84,14 @@ If you want to do a lexicographical comparison of two enumerables, use `CompareT
 `CompareTo` accepts an `IComparer<T>` if you need to customize how the values are compared.
 
 ### Except
-LINQ's `Except` only works if both collections contain the same types. It will only match whole objects. At times, you want to remove items with a property whose value is found in another collection.
+LINQ's `Except` only works if both collections contain the same type. It will only match whole objects. At times, you want to remove items with a property whose value is found in another collection.
 
-For example, say you have a list of `Product`s. The user can select which `Product`s they want to remove from the `Order`. However, the UI only returns the primary keys of the `Product`s. In this case, LINQ's `Except` won't work because you can only call `Except` with to lists of `Product`. You will need to first convert the primary keys into `Product`s and then call `Except`. Doing an entire database hit is wasteful if you are just managing a collection in-memory.
+For example, say you have a list of `Product`s. The user can select which `Product`s they want to remove from the list. However, the UI only returns the primary keys of the `Product`s. In this case, LINQ's `Except` won't work because you can only call `Except` with to lists of `Product`. You will need to first convert the primary keys into `Product`s and then call `Except`. Doing an entire database hit is wasteful if you are just managing a collection in-memory.
 
 CollectionExtensions provides a version of `Except` for handling this use-case. It accepts a key-selector and a list of keys. It will efficiently remove any items from the source collection that have properties whose values are found in the key collection.
 
 ### ForEach
-LINQ does not provide a way to perform an action for each item in a collection. The `ForEach` method will iterate over each item in a collection and peform an `Action` on it. Be careful.
+LINQ does not provide a way to perform an action for each item in a collection. The `ForEach` method will iterate over each item in a collection and peform an `Action` on it. Be careful not to overuse this method. Often a `foreach` is easier to read and understand.
+
+### Intersect
+LINQ's `Intercept` only works if both collections contain the same type. It will only match whole objects. At times, you want to remove items with a property whose value is not found in another collection.
