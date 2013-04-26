@@ -99,3 +99,19 @@ LINQ's `Intersect` only works if both collections contain the same type. It will
 For example, say you have a list of `Product`s. The user can select which `Product`s they want to remove from the list. However, the UI only returns the primary keys of the `Product`s that should remain. In this case, LINQ's `Intersect` won't work because you can only call `Intersect` with two lists of `Product`. You will need to first convert the primary keys into `Product`s and then call `Intersect`. Doing an entire database hit is wasteful if you are just managing a collection in-memory.
 
 CollectionExtensions provides a version of `Intercept` for handling this use-case. It accepts a key-selector and a list of keys. It will efficiently remove any items from the source collection that have properties whose values are not found in the key collection.
+
+### MaxByKey
+LINQ's `Max` doesn't allow you to find an item whose property has the largest value. It will let you find the largest property value, but it won't give you the item it belonged to.
+
+CollectionExtensions provides a method called `MaxByKey` for finding the item with the largest property.
+
+### MinByKey
+LINQ's `Min` doesn't allow you to find an item whose property has the smallest value. It will let you find the smallest property value, but it won't give you the item it belonged to.
+
+CollectionExtensions provides a method called `MinByKey` for finding the item with the smallest property.
+
+### RandomSamples
+If you want to randomly select a number of items from a collection, you can use the `RandomSamples` method. If you ask for more items than are in the collection, the entire collection is returned.
+
+### RotateLeft
+If you want to create a new collection with the items from another collection rotated, you can use the `RotateLeft` method. `RotateLeft` is smart enough to handle negative shifts, which will rotate the collection to the right. It also handles shifts that are larger than the collection, performing a full rotation.
