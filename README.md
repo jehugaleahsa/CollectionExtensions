@@ -94,4 +94,4 @@ CollectionExtensions provides a version of `Except` for handling this use-case. 
 LINQ does not provide a way to perform an action for each item in a collection. The `ForEach` method will iterate over each item in a collection and peform an `Action` on it. Be careful not to overuse this method. Often a `foreach` is easier to read and understand.
 
 ### Intersect
-LINQ's `Intercept` only works if both collections contain the same type. It will only match whole objects. At times, you want to remove items with a property whose value is not found in another collection.
+LINQ's `Intersect` only works if both collections contain the same type. It will only match whole objects. At times, you want to remove items with a property whose value is not found in another collection.
