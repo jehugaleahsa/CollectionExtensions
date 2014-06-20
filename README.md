@@ -116,7 +116,7 @@ If you want to randomly select a number of items from a collection, you can use 
 ### RotateLeft
 If you want to create a new collection with the items from another collection rotated, you can use the `RotateLeft` method. `RotateLeft` is smart enough to handle negative shifts, which will rotate the collection to the right. It also handles shifts that are larger than the collection, performing a full rotation.
 
-## Licence
-If you are looking for a licence, you won't find one. The software in this project is free, as in "free as air". Feel free to use my software anyway you like. Use it to build up your evil war machine, swindle old people out of their social security or crush the souls of the innocent.
+## License
+If you are looking for a license, you won't find one. The software in this project is free, as in "free as air". Feel free to use my software anyway you like. Use it to build up your evil war machine, swindle old people out of their social security or crush the souls of the innocent.
 
 I love to hear how people are using my code, so drop me a line. Feel free to contribute any enhancements or documentation you may come up with, but don't feel obligated. I just hope this code makes someone's life just a little bit easier.
